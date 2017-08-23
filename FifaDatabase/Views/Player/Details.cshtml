@@ -1,0 +1,237 @@
+﻿@model FifaDatabase.Models.Player
+@{
+    ViewBag.Title = "Player Details";
+}
+
+<h1 align="center">@Html.DisplayFor(model => model.Name)</h1>
+
+<div>
+
+    <hr />
+
+    <div class="container">
+
+        <div class="card">
+            <img src="~/@Html.DisplayFor(model => model.Card)" />
+        </div>
+
+        <div class="traits">
+
+            <h3>
+                @Html.DisplayNameFor(model => model.Description)
+            </h3>
+            <br />
+
+            <p>
+                @Html.DisplayFor(model => model.Description)
+            </p>
+
+            <h3>
+
+                @Html.DisplayNameFor(model => model.Traits)
+            </h3>
+            <br />
+            <p>
+                @Html.DisplayFor(model => model.Traits)
+            </p>
+
+            <h3>
+
+                @Html.DisplayNameFor(model => model.Specialities)
+
+            </h3>
+            <br />
+            <p>
+                @Html.DisplayFor(model => model.Specialities)
+            </p>
+
+        </div>
+
+        <div class="info">
+
+            <h3>
+                Player Info:
+            </h3>
+            <br />
+
+            <table>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Rating)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Rating)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Position)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Position)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Name)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Club)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Club)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.League)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.League)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Nation)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Nation)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Age)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Age)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Height)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Height)cm
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="statname">
+                        @Html.DisplayNameFor(model => model.Workrates)
+                    </td>
+
+                    <td class="stat">
+                        @Html.DisplayFor(model => model.Workrates)
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="button">
+
+            <input type="button" id="buttons" class="btn btn-primary" value="Back" onclick="location.href='@Url.Action("Index", "Player")'" />
+
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <hr>
+                <div class="row text-center">
+                    <div class="col-md-2">
+                        <h4>@Html.DisplayNameFor(model => model.Pace)</h4>
+                        <br />
+                        <div id="activeBorder" class="active-border">
+                            <div id="circle" class="circle">
+                                <span class="prec 270" id="prec">@Html.DisplayFor(model => model.Pace)</span>
+                            </div>
+                        </div>
+                    </div>       
+                    <div class="col-md-2">
+                        <h4>@Html.DisplayNameFor(model => model.Shooting)</h4>
+                        <br />
+                        <div id="activeBorder" class="active-border">
+                            <div id="circle" class="circle">
+                                <span class="prec 270" id="prec">@Html.DisplayFor(model => model.Shooting)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>@Html.DisplayNameFor(model => model.Dribbling)</h4>
+                        <br />
+                        <div id="activeBorder" class="active-border">
+                            <div id="circle" class="circle">
+                                <span class="prec 270" id="prec">@Html.DisplayFor(model => model.Dribbling)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>@Html.DisplayNameFor(model => model.Passing)</h4>
+                        <br />
+                        <div id="activeBorder" class="active-border">
+                            <div id="circle" class="circle">
+                                <span class="prec 270" id="prec">@Html.DisplayFor(model => model.Passing)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>@Html.DisplayNameFor(model => model.Defending)</h4>
+                        <br />
+                        <div id="activeBorder" class="active-border">
+                            <div id="circle" class="circle">
+                                <span class="prec 270" id="prec">@Html.DisplayFor(model => model.Defending)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>@Html.DisplayNameFor(model => model.Physical)</h4>
+                        <br />
+                        <div id="activeBorder" class="active-border">
+                            <div id="circle" class="circle">
+                                <span class="prec 270" id="prec">@Html.DisplayFor(model => model.Physical)</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <br />
+
+                </div>
+
+
+

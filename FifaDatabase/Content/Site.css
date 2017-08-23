@@ -1,0 +1,194 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+     font-family: "Trebuchet MS";
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+     font-family: "Trebuchet MS"; 
+          font-size:15px;     
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+h1,h2,h3,h4,h5{
+
+      font-family: "Trebuchet MS";     
+}
+
+tr:nth-child(odd) {
+    background-color: aliceblue;
+}
+
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+
+
+#homepage{
+
+    background-color:black;
+}
+
+.button{
+
+    float:right;
+    height:10%;
+    width:10%;
+    margin-right:13%;
+}
+
+.deletebutton{
+    
+    height:10%;
+    width:10%;
+}
+
+#buttons{
+
+    font-style: normal;   
+    color:white;
+    background-color: royalblue;
+    width:150px;
+}
+
+#searchbox{
+
+    float:right;
+    font-weight:bold;
+}
+
+
+#create{
+
+    float:left;
+}
+#navigationbar{
+
+     background-color: royalblue;
+}
+
+#navcolour{
+
+    color:white;
+}
+#btext{
+
+     color:white;
+}
+
+#title{
+
+    text-align:center;
+     font-family: "Trebuchet MS";     
+     font-size:60px;
+
+}
+
+
+.container{
+
+    width:100%;
+    overflow:hidden;
+    
+}
+
+.card, .info, .traits{
+
+ float:left;
+ width:21%;
+ margin:2%;
+
+}
+
+.traits{
+
+    width:44%;
+
+}
+
+.info{
+     width:23%;
+   
+}
+
+.left1, .center1, .right1{
+
+ float:left;
+ width:45%;
+ margin:1%;
+
+}
+
+.right1{
+     float:right;
+    width:45%;
+
+}
+
+
+.statname, .stat {
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+  
+}
+
+.statname{
+
+    font-weight:bold;
+}
+
+.prec{
+    top:22px;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.circle{
+    position: relative;
+    top: 5px;
+    left: 5px;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: aliceblue;
+}
+
+.active-border{
+    position: relative;
+    text-align: center;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+
+    background-color:royalblue;
+    background-image:
+        linear-gradient(162deg, transparent 50%, royalblue 50%),
+        linear-gradient(90deg, royalblue 50%, transparent 50%);
+    
+}
+

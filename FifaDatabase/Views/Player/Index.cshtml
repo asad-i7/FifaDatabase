@@ -1,0 +1,121 @@
+﻿@model PagedList.IPagedList<FifaDatabase.Models.Player>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "Top Players";
+}
+
+<div class="header">
+    <h1 align="center">FIFA 17 Database</h1>
+</div>
+
+<h2 align="center">Top Players</h2>
+
+<p id="create">
+    <input type="button" id="buttons" class="btn btn-primary" value="Add Player" onclick="location.href='@Url.Action("Create", "Player")'" />
+</p>
+
+
+@using (Html.BeginForm("Index", "Player", FormMethod.Get))
+{
+    <p id="searchbox">
+        Name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" id="buttons" class="btn btn-primary" value="Filter" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+
+        </th>
+
+        <th>
+            @Html.ActionLink("RATING", "Index", new { sortOrder = ViewBag.RatingSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+
+        <th>
+            @Html.ActionLink("NAME", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("POS", "Index", new { sortOrder = ViewBag.PositionSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("PAC", "Index", new { sortOrder = ViewBag.PaceSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("SHO", "Index", new { sortOrder = ViewBag.ShootingSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("PAS", "Index", new { sortOrder = ViewBag.PassingSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("DRI", "Index", new { sortOrder = ViewBag.DribblingSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("DEF", "Index", new { sortOrder = ViewBag.DefendingSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("PHY", "Index", new { sortOrder = ViewBag.PhysicalSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Image)" width="80" height="80" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                <br />
+                @Html.DisplayFor(modelItem => item.Club) | @Html.DisplayFor(modelItem => item.Nation)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shooting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dribbling)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Defending)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Physical)
+            </td>
+            <td>
+                @Html.ActionLink("View", "Details", new { id = item.ID })
+                <br />
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                <br />
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<div align="center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
