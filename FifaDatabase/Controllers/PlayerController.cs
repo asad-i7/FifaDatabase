@@ -21,14 +21,14 @@ namespace FifaDatabase.Views
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.RatingSortParm = String.IsNullOrEmpty(sortOrder) ? "rating_desc" : "";
-            ViewBag.NameSortParm = sortOrder == "Name" ? "name_desc": "Name";
-            ViewBag.PositionSortParm = sortOrder == "Position" ? "position_desc": "Position";
-            ViewBag.PaceSortParm = sortOrder == "Pace" ? "pace_desc": "Pace";
+            ViewBag.NameSortParm = sortOrder == "Name" ? "name_desc" : "Name";
+            ViewBag.PositionSortParm = sortOrder == "Position" ? "position_desc" : "Position";
+            ViewBag.PaceSortParm = sortOrder == "Pace" ? "pace_desc" : "Pace";
             ViewBag.ShootingSortParm = sortOrder == "Shooting" ? "shooting_desc" : "Shooting";
-            ViewBag.PassingSortParm = sortOrder == "Passing" ? "passing_desc": "Passing";
-            ViewBag.DribblingSortParm = sortOrder == "Dribbling" ? "dribbling_desc": "Dribbling";
-            ViewBag.DefendingSortParm = sortOrder == "Defending" ? "defending_desc": "Defending";
-            ViewBag.PhysicalSortParm = sortOrder == "Physical" ? "physical_desc": "Physical";
+            ViewBag.PassingSortParm = sortOrder == "Passing" ? "passing_desc" : "Passing";
+            ViewBag.DribblingSortParm = sortOrder == "Dribbling" ? "dribbling_desc" : "Dribbling";
+            ViewBag.DefendingSortParm = sortOrder == "Defending" ? "defending_desc" : "Defending";
+            ViewBag.PhysicalSortParm = sortOrder == "Physical" ? "physical_desc" : "Physical";
 
             if (searchString != null)
             {

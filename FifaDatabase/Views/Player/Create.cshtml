@@ -7,16 +7,15 @@
 <h1 align="center">Add Player</h1>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4 align="center">Please Enter Player Information</h4>
         <hr />
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
 
         <div class="container">
 
@@ -101,10 +100,7 @@
                     </div>
                 </div>
 
-               
             </div>
-
-      
 
             <div class="right1">
 
@@ -172,7 +168,7 @@
                     </div>
                 </div>
 
-               
+
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -198,14 +194,8 @@
                 </div>
 
             </div>
-
-</div>
-
-         
-         
-
-      
         </div>
+    </div>
 
 
 }
